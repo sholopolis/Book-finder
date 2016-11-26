@@ -14,12 +14,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.view.View.GONE;
 
 public class Searchable extends AppCompatActivity implements LoaderCallbacks<ArrayList<Book>> {
 
@@ -66,6 +69,7 @@ public class Searchable extends AppCompatActivity implements LoaderCallbacks<Arr
             }
             else{
                 ((TextView)findViewById(R.id.emptyTextView)).setText("No internet connection :(");
+                ((ProgressBar)findViewById(R.id.progressBar)).setVisibility(GONE);
             }
         }
     }
@@ -90,6 +94,7 @@ public class Searchable extends AppCompatActivity implements LoaderCallbacks<Arr
     @Override
     public void onLoadFinished(Loader<ArrayList<Book>> loader, ArrayList<Book> books) {
         booksAdapter.clear();
+        ((ProgressBar)findViewById(R.id.progressBar)).setVisibility(GONE);
         // set text for empty view in case no book was found
         ((TextView) findViewById(R.id.emptyTextView)).setText("No books found :(");
 
