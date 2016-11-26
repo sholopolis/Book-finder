@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+    <ImageView
+        android:layout_width="76dp"
+        android:layout_height="@dimen/item_height"
+        android:scaleType="fitCenter"
+        android:background="@color/colorPrimary"
+        android:id="@+id/book_image"/>
+    <LinearLayout
+        android:layout_width="190dp"
+        android:orientation="vertical"
+        android:layout_height="@dimen/item_height">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/book_title"
+            android:fontFamily="sans-serif"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:text="TITLE OF BOOK HERE"
+            android:layout_weight="2"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/book_author"
+            android:text="Author's name goes here"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingBottom="8dp"
+            android:paddingLeft="8dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="64dp"
+        android:orientation="vertical"
+        android:layout_height="@dimen/item_height"
+        android:layout_weight="0.36">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/book_year"
+            android:fontFamily="sans-serif"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:text="2016"
+            android:layout_weight="2"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/num_pages"
+            android:text="245 pg"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingBottom="8dp"
+            android:paddingLeft="8dp"/>
+    </LinearLayout>
+
+</LinearLayout>
