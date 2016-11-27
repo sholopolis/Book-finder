@@ -106,6 +106,7 @@ public class QueryUtils {
         int pages = 0;
         String inforUrl="";
         String imageUrl ="";
+        String author ="";
         if(!jsonString.isEmpty()){
             try {
                 // get the whole response
@@ -117,7 +118,9 @@ public class QueryUtils {
 
                     JSONObject current = jsonBooks.getJSONObject(i).getJSONObject("volumeInfo");
                     String title = current.getString("title");
-                    String author = getAuthor(current.getJSONArray("authors"));
+                    if(current.has("authors")) {
+                        author = getAuthor(current.getJSONArray("authors"));
+                    }
                     if(current.has("publishedDate")) {
                          year = parseInt(current.getString("publishedDate").substring(0, 4));
                     }
